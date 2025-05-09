@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Authors>Amey Mahadik (saapo-ka-baadshah)</Authors>
+		<Title>SKB.Core.EditorConfig</Title>
+		<Description>
+			This allows us to inject the static .editorconfig stored accorss an enterprise to be integrated,
+			also injection is kept seamless through nuget package reference.
+		</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="SKB.Core.EditorConfig.props" Pack="true" PackagePath="\build" />
+        <None Include=".editorconfig" Pack="true" PackagePath="\content\Rules"/>
+		<None Include="README.md" Pack="true" PackagePath="\content"/>
+    </ItemGroup>
+
+</Project>

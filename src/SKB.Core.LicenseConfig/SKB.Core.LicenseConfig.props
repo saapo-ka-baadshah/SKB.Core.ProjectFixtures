@@ -1,0 +1,20 @@
+<Project>
+    <ItemGroup>
+        <LicenseFileToCopy Include="$(MSBuildThisFileDirectory)../content/LICENSE.rst"/>
+    </ItemGroup>
+    
+    <Target Name="CopyLicense" BeforeTargets="Build">
+        <PropertyGroup>
+            <RepositoryRoot Condition="'$(RepositoryRoot)' == ''">
+                $([System.IO.Path]::GetDirectoryName($([MSBuild]::GetPathOfFileAbove('.gitignore', '$(MSBuildProjectDirectory)'))))
+            </RepositoryRoot> 
+        </PropertyGroup>
+        <Message Importance="high" Text="Copying LICENSE.rst To: '$(RepositoryRoot)'"/>
+        <Copy 
+                SourceFiles="@(LicenseFileToCopy)"
+                DestinationFolder="$(RepositoryRoot)"
+                SkipUnchangedFiles="true"
+                UseHardlinksIfPossible="false"
+        />
+    </Target>
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="SKB.Core.LicenseConfig.props" Pack="true" PackagePath="\build"/>
+        <None Include="LICENSE.rst" Pack="true" PackagePath="\content"/>
+        <None Update="README.md">
+          <Pack>true</Pack>
+          <PackagePath>\content</PackagePath>
+        </None>
+    </ItemGroup>
+
+</Project>

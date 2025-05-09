@@ -1,0 +1,25 @@
+<Project>
+    <PropertyGroup>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EditorConfigFilesToCopy Include="$(MSBuildThisFileDirectory)../content/Rules/.editorconfig"/>
+    </ItemGroup>
+
+    <Target Name="CopyEditorConfig" BeforeTargets="Build">
+        <PropertyGroup>
+            <RepositoryRoot Condition="'$(RepositoryRoot)' == ''">
+                $([System.IO.Path]::GetDirectoryName($([MSBuild]::GetPathOfFileAbove('.gitignore', '$(MSBuildProjectDirectory)'))))
+            </RepositoryRoot>
+        </PropertyGroup>
+        <Message Importance="high" Text="Copying Editorconfig To: '$(RepositoryRoot)'"/>
+        <Copy
+                SourceFiles="@(EditorConfigFilesToCopy)"
+                DestinationFolder="$(RepositoryRoot)"
+                SkipUnchangedFiles="true"
+                UseHardlinksIfPossible="false"
+        />
+    </Target>
+</Project>
