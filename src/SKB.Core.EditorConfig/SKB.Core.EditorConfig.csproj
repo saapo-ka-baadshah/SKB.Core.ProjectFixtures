@@ -6,6 +6,7 @@
 			This allows us to inject the static .editorconfig stored accorss an enterprise to be integrated,
 			also injection is kept seamless through nuget package reference.
 		</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -21,7 +22,7 @@
     <ItemGroup>
         <None Include="SKB.Core.EditorConfig.props" Pack="true" PackagePath="\build" />
         <None Include=".editorconfig" Pack="true" PackagePath="\content\Rules"/>
-		<None Include="README.md" Pack="true" PackagePath="\content"/>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
