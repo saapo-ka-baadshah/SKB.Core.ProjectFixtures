@@ -1,6 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <Authors>Amey Mahadik (saapo-ka-baadshah)</Authors>
+        <Title>SKB.Core.LicenseConfig</Title>
+        <Description>
+            This allows us to inject the static LICENSE.rst stored across an enterprise to be integrated,
+            also injection is kept seamless through nuget package reference.
+        </Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    
+    <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -11,7 +21,7 @@
         <None Include="LICENSE.rst" Pack="true" PackagePath="\content"/>
         <None Update="README.md">
           <Pack>true</Pack>
-          <PackagePath>\content</PackagePath>
+          <PackagePath>\</PackagePath>
         </None>
     </ItemGroup>
 
