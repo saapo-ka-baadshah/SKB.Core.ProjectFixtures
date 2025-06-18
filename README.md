@@ -16,6 +16,29 @@ Here we specify all the necessary Fixtures for the Projects within following sco
 2. Shared `.editorconfig`.
    These are the scopes for the shared coding style guidlines
 
+## Requirements
+-  .NET 9 
+
+Also, this package itself is served to be used as a requirement. 
+
+## Installation / Incorporation in an organisation
+The repository is equipped with GitHub actions that allow us to use a GitHub nuget registry.
+
+To add these packages to your organisation wide GitHub NuGet registry:
+1. Fork the Repository
+2. Add following variables in the repository variables and secrets section for GitHub actions 
+
+   | Variables                 | Values                        |
+   |---------------------------|-------------------------------|
+   | USERNAME                  | gh username for the packages  |
+   | NUGET_SRC_KEY             | By what name nuget source identifies |
+   | MAJOR_VERSION             | Incremented with non-reversible (incompatible) lib changes |
+   | MINOR_VERSION             | Incremneted with feature adds |
+
+   | Secrets                   | Values                        |
+   |---------------------------|-------------------------------|
+   | GH_PATH                   | PAT with clearances for Package uploads|
+
 ## How to Use:
 Include these files in the head/ face end of your solution/ project.
 Add references as followed:
