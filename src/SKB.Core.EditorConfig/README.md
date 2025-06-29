@@ -23,7 +23,7 @@ and Compile plus Build time assets, in any project in the solution.
 
 The package adds the `.editorconfig` to the location where the `.gitignore` is located.
 
-## Testing
+#### Testing
 
 Package the Package to test the file location structure
 
@@ -44,9 +44,9 @@ go get github.com/saapo-ka-baadshah/SKB.Core.ProjectFixtures/src/SKB.Core.Editor
 #### 2. Add the `go:generate` directive call to your project, mainly at the top of your main package
 
 ```go
-/// <Project Description>
+// <Project Description>
 
-//go:generate go run github.com/saapo-ka-baadshah/SKB.Core.ProjectFixtures/src/SKB.Core.EditorConfig/inject-editorconfig
+//go:generate go run github.com/saapo-ka-baadshah/SKB.Core.ProjectFixtures/src/SKB.Core.EditorConfig
 
 package main
 

@@ -1,4 +1,4 @@
-// / Loads a centralized .editorconfig file for the
+// Loads a centralized .editorconfig file for the
 package main
 
 import (
