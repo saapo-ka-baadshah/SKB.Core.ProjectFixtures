@@ -38,7 +38,7 @@ Import the project reference to the `main` package in your go project while usin
 #### 1. Install the package
 
 ```shell
-go mod install github.com/saapo-ka-baadshah/SKB.Core.ProjectFixtures/src/SKB.Core.EditorConfig/inject-editorconfig
+go get github.com/saapo-ka-baadshah/SKB.Core.ProjectFixtures/src/SKB.Core.EditorConfig
 ```
 
 #### 2. Add the `go:generate` directive call to your project, mainly at the top of your main package
